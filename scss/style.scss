@@ -1,0 +1,225 @@
+// ##################
+// VARIABLE OVERRIDES
+// ##################
+
+$green: #00ffC4;
+$body-bg: #1A1B1D;
+
+$theme-colors: (
+    "brand-primary": $green,
+    "primary": $green,
+    "text-primary": $green,
+    "link-color": $green
+);
+   
+// For 6th padding type:
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 9)
+), $spacers);
+
+
+
+$font-family-sans-serif: Raleway, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+// Bootstrap Sass files
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+
+// ##############
+// STYLING
+// ##############
+
+body {
+    color: #fff;
+}
+
+.navbar {
+    width: 100%;
+    background: none !important;
+    
+    @media(max-width: 768px){
+        background: #000 !important;
+    }
+    
+    .nav-link {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .nav-item {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        
+        @media(max-width: 768px) {
+            padding: 0;
+        }
+        .nav-link{
+            @media(max-width: 768px) {
+                font-weight: normal;
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+
+// ###
+// ### Hero section with nav (~1)
+// ###
+
+#hero {
+//    background-image: 
+//        linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)),
+//        url('../assets/bg.jpg');
+//    background-size: cover, cover;
+//    background-position: center, 0 100%;
+//    background-repeat: no-repeat, no-repeat;
+    position: relative;
+    background: url('../assets/bg.jpg') no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 80%;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(rgba(0,0,0,.5), #1A1B1D);
+    
+    transition: background-color 450ms ease-in-out;
+}
+
+#hero:hover::before {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3.6em;
+}
+
+.hero-img {
+    width: 80%;
+    display: inline-block;
+}
+
+.rodent-container {
+    position: relative;
+}
+
+.rodent-container:before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background: rgba(33,33,33,.8);
+    border-radius: 50%;
+    box-shadow: 0 0 20px #222;
+}
+
+
+// ###
+// ### Feature wrapper section (~2)
+// ###
+
+.feature-wrapper {
+    color: #000;
+}
+
+.feature-icon {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    @media (min-width: 992px) {
+        height: auto;
+    }
+}
+
+.feature-wrapper p {
+    color: #000;
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    @media (min-width: 992px) {
+        display: inline;
+    }
+}
+
+#join-container {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.5)) no-repeat, url('../assets/skull.jpeg') no-repeat;
+    background-size: cover, cover;
+    h2 {
+        letter-spacing: 4px;
+        font-weight: bold;
+    }
+    h4 {
+        color: grey;
+    }
+    
+    .form-control {
+        background: #111111;
+        border: 3px solid #2F2F2F;
+        padding: 10px;
+        color: #aaa;
+    }
+    .btn {
+        padding: 12px;
+        border: none;
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
